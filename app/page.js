@@ -933,10 +933,13 @@ function Footer({ t }) {
             <a href="#">{t.footer.contact}</a>
           </div>
           <div className="footer-social">
-            <a href="https://twitter.com/XyberClan" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={18} /></a>
-            <a href="https://github.com/xyberclan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={18} /></a>
-            <a href="https://linkedin.com/company/xyberclan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
-            <a href="https://instagram.com/xyberclan" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><MessageCircle size={18} /></a>
+            <a href="https://web.facebook.com/profile.php?id=61581514840888" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Users size={18} /></a>
+            <a href="https://x.com/XyberC60820" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><Twitter size={18} /></a>
+            <a href="https://www.linkedin.com/company/xyberclan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
+            <a href="https://github.com/CYBERCLAN237" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={18} /></a>
+            <a href="https://www.tiktok.com/@xyberclan" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><Globe size={18} /></a>
+            <a href="https://www.youtube.com/@xyberclan" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><Play size={18} /></a>
+            <a href="https://whatsapp.com/channel/0029VbBLsii2P59lAGA3wO1O" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Channel"><MessageCircle size={18} /></a>
           </div>
         </div>
         <div className="footer-bottom-strip">
