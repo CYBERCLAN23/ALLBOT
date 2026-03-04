@@ -145,7 +145,9 @@ const translations = {
       status: 'Status',
       rights: 'All rights reserved.',
       privacy: 'Privacy Policy',
-      terms: 'Terms of Service'
+      terms: 'Terms of Service',
+      teamTitle: 'The Team Behind ALLbot',
+      teamDesc: 'ALLbot is a product of XyberClan, developed by a passionate team of engineers and designers dedicated to empowering African businesses.'
     }
   },
   fr: {
@@ -279,7 +281,9 @@ const translations = {
       status: 'Statut des Services',
       rights: 'Tous droits réservés.',
       privacy: 'Politique de Confidentialité',
-      terms: 'Conditions d\'Utilisation'
+      terms: 'Conditions d\'Utilisation',
+      teamTitle: 'L\'Équipe derrière ALLbot',
+      teamDesc: 'ALLbot est un produit de XyberClan, développé par une équipe passionnée d\'ingénieurs et de designers dédiée à l\'autonomisation des entreprises africaines.'
     }
   }
 };
@@ -925,17 +929,18 @@ function Footer({ t }) {
             <a href="#features">{t.featuresInfo.label}</a>
             <a href="#pricing">{t.pricingData.label}</a>
             <a href="#">{t.footer.docs}</a>
-            <a href="#">{t.footer.about}</a>
+            <a href="https://xyberclan.dev" target="_blank" rel="noopener noreferrer">{t.footer.about}</a>
             <a href="#">{t.footer.contact}</a>
           </div>
           <div className="footer-social">
-            <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
-            <a href="#" aria-label="GitHub"><Github size={18} /></a>
-            <a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a>
+            <a href="https://twitter.com/XyberClan" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={18} /></a>
+            <a href="https://github.com/xyberclan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={18} /></a>
+            <a href="https://linkedin.com/company/xyberclan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
+            <a href="https://instagram.com/xyberclan" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><MessageCircle size={18} /></a>
           </div>
         </div>
         <div className="footer-bottom-strip">
-          <p>&copy; {new Date().getFullYear()} ALLbot by <a href="#">XyberClan</a>. {t.footer.rights}</p>
+          <p>&copy; {new Date().getFullYear()} ALLbot by <a href="https://xyberclan.dev" target="_blank" rel="noopener noreferrer">XyberClan</a>. {t.footer.rights}</p>
           <div className="footer-legal">
             <a href="#">{t.footer.privacy}</a>
             <a href="#">{t.footer.terms}</a>
@@ -943,6 +948,59 @@ function Footer({ t }) {
         </div>
       </div>
     </footer>
+  );
+}
+
+/* ─────────────── TEAM SECTION ─────────────── */
+function Team({ t }) {
+  const members = [
+    { name: 'WANDJI TCHALEU YANN FÉLIX', role: 'Lead Developer & Designer', stack: 'Python, Networking, Design' },
+    // Add other members if available
+  ];
+
+  return (
+    <section className="section team-section" id="team">
+      <div className="container">
+        <motion.div
+          className="team-header"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          variants={stagger}
+        >
+          <motion.div variants={fadeUp} className="section-label">XyberClan</motion.div>
+          <motion.h2 variants={fadeUp} className="section-title">{t.footer.teamTitle}</motion.h2>
+          <motion.p variants={fadeUp} className="section-subtitle">{t.footer.teamDesc}</motion.p>
+        </motion.div>
+
+        <div className="team-grid">
+          {members.map((m, i) => (
+            <motion.div
+              key={i}
+              className="team-card"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              custom={i}
+            >
+              <div className="team-card-inner">
+                <div className="team-avatar-placeholder">
+                  <Users size={32} />
+                </div>
+                <h3>{m.name}</h3>
+                <p className="team-role">{m.role}</p>
+                <div className="team-stack">
+                  {m.stack.split(', ').map((s, j) => (
+                    <span key={j} className="stack-tag">{s}</span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -962,6 +1020,7 @@ export default function Home() {
       <Pricing t={t} />
       <Testimonials t={t} />
       <FAQ t={t} />
+      <Team t={t} />
       <CTABanner t={t} />
       <Footer t={t} />
     </>
