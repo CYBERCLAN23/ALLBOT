@@ -36,8 +36,11 @@ export const metadata = {
     images: ['/twitter-image.png'],
   },
   icons: {
-    icon: '/icon.png',
+    icon: '/icon1.png',
     apple: '/apple-icon.png',
+  },
+  appleWebApp: {
+    title: 'Allbot',
   },
 };
 
